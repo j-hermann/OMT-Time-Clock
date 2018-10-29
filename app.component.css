@@ -1,7 +1,56 @@
+/* These define each div as an area to allow the grid to be properly arranged. */
+.emptycell{
+    grid-area: emptycell;
+}
+
+.clock{
+  grid-area: clock;
+}
+
+.emergency{
+  grid-area: emergency;
+}
+
+.clockIn{
+  grid-area: clockIn;
+}
+
+.clockOut{
+  grid-area: clockOut;
+}
+
+.onJob{
+  grid-area: onJob;
+}
+
+.offJob{
+  grid-area: offJob;
+}
+
+.sticker{
+  grid-area: sticker;
+}
+
+.incomplete{
+  grid-area: incomplete;
+}
+
+.materials{
+  grid-area: materials;
+}
+
+.more{
+  grid-area: more;
+}
+
+/* Creates a grid of all divs contained with .grid-container */
 .grid-container {
   display: grid;
-  height: 50%;
-  grid-template-columns: auto auto auto auto auto auto;
+  /* Defines the number of columns and rows based off of the areas selected, the areas are defined below*/
+  grid-template-areas:
+  'clock clock emptycell emptycell clockIn clockOut sticker incomplete'
+  'emergency emergency emptycell emptycell onJob offJob materials more'
+  'emergency emergency emptycell emptycell emptycell emptycell emptycell emptycell';
   grid-gap: 5px;
   background-color: #2196F3;
   padding: 5px;
@@ -14,13 +63,13 @@
   font-size: 20px;
 }
 
-.clock{
+/* .clock{
   grid-column: 1 / span 2;
 }
 
 .emergency{
   grid-column: 1 / span 2;
-}
+} */
 
 body{
   color: #0066ff;
