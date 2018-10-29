@@ -22,28 +22,3 @@
 body{
   color: #0066ff;
 }
-
-nav a {
-  /* padding: 20px 20px 20px 20px; */
-  padding: 2em 2em 2em 2em;
-  text-decoration: none;
-  /* margin-top: 10px; */
-  display: inline-block;
-  background-color: #eee;
-}
-
-nav a:visited, a:link {
-  color: #607d8b;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #cfd8dc;
-}
-nav a.active {
-  color: #039be5;
-}
-
-ul {
-  list-style-type: none;
-  text-align: left;
-}
