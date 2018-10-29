@@ -2,6 +2,7 @@ body{
   font-family: "Times New Roman", Georgia, serif;
 }
 
+/* Sets up the veritcal menu */
 .vertical-menu {
     width: 10%;
     height: 100%;
@@ -14,6 +15,7 @@ body{
     background-color: #eee;
 }
 
+/* Outlines the various links for easier viewing */
 a {
     border-bottom: 1px solid #555;
 }
