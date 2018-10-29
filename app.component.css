@@ -1,75 +1,23 @@
-/* These define each div as an area to allow the grid to be properly arranged. */
-.emptycell{
-    grid-area: emptycell;
+.vertical-menu {
+    width: 200px;
 }
 
-.clock{
-  grid-area: clock;
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
 }
 
-.emergency{
-  grid-area: emergency;
+.vertical-menu a:hover {
+    background-color: #ccc;
 }
 
-.clockIn{
-  grid-area: clockIn;
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
 }
-
-.clockOut{
-  grid-area: clockOut;
-}
-
-.onJob{
-  grid-area: onJob;
-}
-
-.offJob{
-  grid-area: offJob;
-}
-
-.sticker{
-  grid-area: sticker;
-}
-
-.incomplete{
-  grid-area: incomplete;
-}
-
-.materials{
-  grid-area: materials;
-}
-
-.more{
-  grid-area: more;
-}
-
-/* Creates a grid of all divs contained with .grid-container */
-.grid-container {
-  display: grid;
-  /* Defines the number of columns and rows based off of the areas selected, the areas are defined below*/
-  grid-template-areas:
-  'clock clock emptycell emptycell clockIn clockOut sticker incomplete'
-  'emergency emergency emptycell emptycell onJob offJob materials more'
-  'emergency emergency emptycell emptycell emptycell emptycell emptycell emptycell';
-  grid-gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-}
-
-/* .clock{
-  grid-column: 1 / span 2;
-}
-
-.emergency{
-  grid-column: 1 / span 2;
-} */
 
 body{
   color: #0066ff;
