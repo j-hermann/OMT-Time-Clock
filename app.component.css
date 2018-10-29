@@ -1,101 +1,44 @@
-/* These define each div as an area to allow the grid to be properly arranged. */
-.emptycell{
-    grid-area: emptycell;
-}
-
-.clock{
-  grid-area: clock;
-}
-
-.emergency{
-  grid-area: emergency;
-}
-
-.clockIn{
-  grid-area: clockIn;
-}
-
-.clockOut{
-  grid-area: clockOut;
-}
-
-.onJob{
-  grid-area: onJob;
-}
-
-.offJob{
-  grid-area: offJob;
-}
-
-.sticker{
-  grid-area: sticker;
-}
-
-.incomplete{
-  grid-area: incomplete;
-}
-
-.materials{
-  grid-area: materials;
-}
-
-.more{
-  grid-area: more;
-}
-
-/* Creates a grid of all divs contained with .grid-container */
-.grid-container {
-  display: grid;
-  /* Defines the number of columns and rows based off of the areas selected, the areas are defined below*/
-  grid-template-areas:
-  'clock clock emptycell emptycell clockIn clockOut sticker incomplete'
-  'emergency emergency emptycell emptycell onJob offJob materials more'
-  'emergency emergency emptycell emptycell emptycell emptycell emptycell emptycell';
-  grid-gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-}
-
-/* .clock{
-  grid-column: 1 / span 2;
-}
-
-.emergency{
-  grid-column: 1 / span 2;
-} */
-
 body{
-  color: #0066ff;
+  font-family: "Times New Roman", Georgia, serif;
 }
 
-nav a {
-  /* padding: 20px 20px 20px 20px; */
-  padding: 2em 2em 2em 2em;
-  text-decoration: none;
-  /* margin-top: 10px; */
+/* Sets up the veritcal menu */
+.vertical-menu {
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: #eee;
+}
+
+/* Outlines the various links for easier viewing */
+a {
+    border-bottom: 1px solid #555;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 25px 0px 25px 10px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-view{
   display: inline-block;
-  background-color: #eee;
-}
-
-nav a:visited, a:link {
-  color: #607d8b;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #cfd8dc;
-}
-nav a.active {
-  color: #039be5;
-}
-
-ul {
-  list-style-type: none;
-  text-align: left;
+  padding-left: 11%;
 }

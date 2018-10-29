@@ -12,7 +12,7 @@ import { ButtonboxComponent } from './buttonbox/buttonbox.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

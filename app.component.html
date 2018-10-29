@@ -1,59 +1,19 @@
-<div id="buttonbox" class="grid-container">
-    <div class="clock">
-      <h1>The clock should go here.</h1>
-    </div>
-    <div class="clockIn">
-      <nav>
-        <a routerLink="buttonbox">Clock In</a>
-      </nav>
-    </div>
-    <div class="clockOut">
-      <nav>
-        <a>Clock Out</a>
-      </nav>
-    </div>
-    <div class="sticker">
-      <nav>
-        <a>Job Sticker</a>
-      </nav>
-    </div>
-    <div class="incomplete">
-      <nav>
-        <a>Incomplete <br/> Workstation</a>
-      </nav>
-    </div>
-    <div class="emergency">
-      <h2>Emergency Numbers!</h2>
-      <p>Clayton McKeon <br> (315)534-0911</p>
-      <p>Kunkel Ambulance <br> (315)797-4111</p>
-      <p>Chad Kinne <br> (315)723-8815</p>
-    </div>
-    <div class="onJob">
-      <nav>
-        <a>Clock Onto Job</a>
-      </nav>
-    </div>
-    <div class="offJob">
-      <nav>
-        <a>Clock Off Job</a>
-      </nav>
-    </div>
-    <!--The two buttons below bring new views on top of the existing buttons-->
-    <div class="materials">
-      <nav>
-        <a>Materials</a>
-      </nav>
-    </div>
-    <div class="more">
-      <nav>
-        <a>More</a>
-      </nav>
-    </div>
-    <!-- emptycell div allows the grid to include empty cells for better formatting -->
-    <!-- <div class="emptycell">
-      <p>blank</p>
-    </div> -->
+<!-- THis div contains the navigation controls-->
+<div class="vertical-menu">
+  <a routerLink="buttonbox">Clock In</a>
+  <a>Clock Out</a>
+  <a>Clock Onto Job</a>
+  <a>Clock Off Job</a>
+  <a>Job Sticker</a>
+  <a>Incomplete <br/> Workstation</a>
+  <a>Materials</a>
+  <a>Another Link</a>
+  <a>Another Link</a>
+  <a>More</a>
+  <a>Another Link</a>
+  <a>Another Link</a>
 </div>
-<!--All view changes will happen below the divs screen consitant-->
-
-<router-outlet></router-outlet>
+<!--The parent modules will load into this div-->
+<div class="main-view">
+  <router-outlet></router-outlet>
+</div>
