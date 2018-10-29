@@ -1,5 +1,9 @@
+body{
+  font-family: "Times New Roman", Georgia, serif;
+}
+
 .vertical-menu {
-    width: 15%;
+    width: 10%;
     height: 100%;
     display: inline-block;
     position: fixed;
@@ -10,14 +14,18 @@
     background-color: #eee;
 }
 
+a {
+    border-bottom: 1px solid #555;
+}
+
 .vertical-menu a {
     background-color: #eee;
     color: black;
     display: block;
-    padding: 19px;
+    padding: 25px 0px 25px 10px;
     text-decoration: none;
-    font-size: 30px;
-}
+    font-size: 20px;
+  }
 
 .vertical-menu a:hover {
     background-color: #ccc;
@@ -30,5 +38,5 @@
 
 .main-view{
   display: inline-block;
-  padding-left: 15%;
+  padding-left: 11%;
 }
