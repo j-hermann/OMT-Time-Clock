@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'buttonbox', component: ButtonboxComponent},
   { path: 'clockin', component: ClockinComponent},
   { path: 'employeeid', component: EmployeeidComponent}
+  //outlet: 'employeeidout' can be used to specifiy outlets
 ];
 
 @NgModule({
