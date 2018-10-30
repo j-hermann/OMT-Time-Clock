@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Employee } from '../employee';
+import { TimeClockService } from '../time-clock.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-employeeid',
@@ -6,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employeeid.component.css']
 })
 export class EmployeeidComponent implements OnInit {
+  //Temp info to test connections
+  employee = Employee;
 
-  constructor() { }
+  constructor(
+    private timeclockService: TimeClockService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    // this.getEmployee();
   }
+
+  // getEmployee(): void {
+  //   this.timeclockService.getEmployee().subscribe(employees => this.employees = employees);
+  // }
 
 }

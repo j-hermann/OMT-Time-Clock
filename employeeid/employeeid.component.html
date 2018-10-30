@@ -1,4 +1,9 @@
 <p>id works</p>
+{{employee}}
+<input type="button" id="test" value="Display" (click)="displayEmployee">
+<div *ngIf="displayEmployee">
+  {{employee}}
+</div>
 <!-- Number pad layout, uncomment once other functionality is completed -->
 <!-- <div class="grid-container">
   <div class="grid-item">1</div>

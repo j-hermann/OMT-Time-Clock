@@ -15,5 +15,6 @@ export class ClockinComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  // Uses a pipe to display current time, this needs to be made to actaully progress with time.
+  today: number = Date.now();
 }
