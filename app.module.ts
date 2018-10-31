@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ButtonboxComponent } from './buttonbox/buttonbox.component';
 import { ClockinComponent } from './clockin/clockin.component';
 import { EmployeeidComponent } from './employeeid/employeeid.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonboxComponent,
     ClockinComponent,
-    EmployeeidComponent
+    EmployeeidComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

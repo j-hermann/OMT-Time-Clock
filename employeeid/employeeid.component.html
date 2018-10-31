@@ -1,13 +1,15 @@
-<p>id works</p>
 <ul class="heroes">
   <li *ngFor="let employee of employees">
     <span class="badge">{{employee.id}}</span> {{employee.name}} <span>{{employee.active}}</span>
   </li>
 </ul>
-<input type="button" id="test" value="Display" (click)="displayEmployee">
-<div *ngIf="displayEmployee">
-  <p>Button Works</p>
+<!-- Takes in employee id, should transmit to services, and then recieve a message -->
+<input #eidBox type="text" name="eidfield" value="">
+<input type="button" id="enterid" value="Enter" (click)="onEnter(eidBox.value)">
+<div *ngIf="idfromInput">
+  {{idfromInput}}
 </div>
+<app-messages></app-messages>
 <!-- Number pad layout, uncomment once other functionality is completed -->
 <!-- <div class="grid-container">
   <div class="grid-item">1</div>
