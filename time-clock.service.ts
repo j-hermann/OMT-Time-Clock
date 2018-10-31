@@ -1,3 +1,4 @@
+// Provides services for the time clock(clock in/out, job on/off) only
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';

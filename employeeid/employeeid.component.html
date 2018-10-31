@@ -1,8 +1,12 @@
 <p>id works</p>
-{{employee}}
+<ul class="heroes">
+  <li *ngFor="let employee of employees">
+    <span class="badge">{{employee.id}}</span> {{employee.name}} <span>{{employee.active}}</span>
+  </li>
+</ul>
 <input type="button" id="test" value="Display" (click)="displayEmployee">
 <div *ngIf="displayEmployee">
-  {{employee}}
+  <p>Button Works</p>
 </div>
 <!-- Number pad layout, uncomment once other functionality is completed -->
 <!-- <div class="grid-container">

@@ -3,6 +3,7 @@ import { Employee } from '../employee';
 import { TimeClockService } from '../time-clock.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { EMPLOYEES } from '../tempData';
 
 @Component({
   selector: 'app-employeeid',
@@ -11,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class EmployeeidComponent implements OnInit {
   //Temp info to test connections
-  employee = Employee;
+  employees = EMPLOYEES;
 
   constructor(
     private timeclockService: TimeClockService,
@@ -22,7 +23,8 @@ export class EmployeeidComponent implements OnInit {
   ngOnInit() {
     // this.getEmployee();
   }
-
+    displayEmployee(): void{
+    }
   // getEmployee(): void {
   //   this.timeclockService.getEmployee().subscribe(employees => this.employees = employees);
   // }
