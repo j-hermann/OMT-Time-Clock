@@ -1,11 +1,13 @@
 <!-- Remove this list before finishing the whole project, saved here for future reference -->
-<ul class="heroes">
-  <li *ngFor="let employee of employees">
-    <p><span class="badge">{{employee.id}}</span> {{employee.name}} <span> Active: {{employee.active}} </span> Clocked In: {{employee.clockedIN}}</p>
-  </li>
-</ul>
+<div class="">
+  <ul class="heroes">
+    <li *ngFor="let employee of employees">
+      <p><span class="badge">{{employee.id}}</span> {{employee.name}} <span> Active: {{employee.active}} </span> Clocked In: {{employee.clockedIN}}</p>
+    </li>
+  </ul>
+</div>
 <!-- Takes in employee id, should transmit to services, and then recieve a message -->
-<input #eidBox type="text" name="eidfield" (keyup.enter)="clockin(eidBox.value)">
+<input #eidBox name="eidfield" (keyup.enter)="clockin(eidBox.value)">
 <input type="button" id="enterid" value="Enter" (click)="clockin(eidBox.value)">
 <div *ngIf="idfromInput">
   {{idfromInput}}

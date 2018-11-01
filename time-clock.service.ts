@@ -38,13 +38,29 @@ export class TimeClockService {
     )
   }
   //Clocks in employee
-  clockinEmployee (employee: Employee): Observable<any> {
-    return this.http.put<Employee>(this.trackerapi, employee, httpOptions).pipe(
-      tap(_ => this.log(`Clocked in id=${employee.id}`)),
+  clockinEmployee (employee: Employee): Observable<Employee> {
+    return this.http.put<Employee[]>(this.trackerapi, employee, httpOptions).pipe(
+      tap(_ => this.log(`Clocked in ${employee.id}`)),
+      catchError(this.handleError<any>('updateHero'))
     );
   }
   private log(message: string) {
     this.messageservice.add(`TimeClockService: ${message}`);
   }
+
+  //Handles http operatins that failed
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+  };
+}
 
 }

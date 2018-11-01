@@ -45,6 +45,6 @@ export class EmployeeidComponent implements OnInit {
   }
 
   clockin(employee: Employee): void {
-    this.timeclockService.clockinEmployee(employee).subscribe();
+    this.timeclockService.clockinEmployee(employee).subscribe(employee => employee.clockedIN = true );
 }
 }
