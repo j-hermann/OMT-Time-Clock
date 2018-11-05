@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Employee } from './employee';
 import { MessageService } from './message.service';
+import { AppComponent } from './app.component';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -30,20 +31,24 @@ export class TimeClockService {
     );
   }
 
-  // Search Employees by id, provided by text input from eployeeid component
-  getEmployee(id: number): Observable<Employee> {
-    const url = '${this.trackerapi}/${id}';
+  //Clocks in employee, searches for employee by id
+  clockinEmployee (id: number): Observable<Employee> {
+    const url = `${this.trackerapi}/${id}`;
     return this.http.get<Employee>(url).pipe(
-      tap(_ => this.log('Fetched employee id=${id}'))
-    )
-  }
-  //Clocks in employee
-  clockinEmployee (employee: Employee): Observable<Employee> {
-    return this.http.put<Employee[]>(this.trackerapi, employee, httpOptions).pipe(
-      tap(_ => this.log(`Clocked in ${employee.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+      tap(_ => this.log(`Fetched Employee ${id}`)),
+      catchError(this.handleError<any>('Clock in employee'))
     );
   }
+
+  // Alternate method possibly
+  clockinEmployee2 (id: number): Observable<Employee> {
+    const url = `${this.trackerapi}/${id}`;
+    return this.http.put<Employee>(url, {clockedIN: true}).pipe(
+      tap(_ => this.log(`Fetched Employee ${id}`)),
+      catchError(this.handleError<any>('Clock in employee'))
+    );
+  }
+
   private log(message: string) {
     this.messageservice.add(`TimeClockService: ${message}`);
   }

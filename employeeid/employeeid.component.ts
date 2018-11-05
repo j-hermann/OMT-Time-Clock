@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { Employee } from '../employee';
@@ -14,6 +14,7 @@ import { MessageService } from '../message.service';
 })
 export class EmployeeidComponent implements OnInit {
   @Input() employee: Employee;
+  @Output() employeeidInput = new EventEmitter<number>();
   employees: Employee[];
   selectEmployee: Employee;
   idfromInput: string;
@@ -26,25 +27,23 @@ export class EmployeeidComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getEmployees();
-  }
-  // Test method for message service
-  onEnter(): void{
-    this.messageservice.add('Reaganomics Lamborghini clocked in at')
+    // this.getEmployees();
   }
 
-  //Gets all employees
-  getEmployees(): void{
-    this.timeclockService.getEmployees()
-      .subscribe(employees => this.employees = employees);
+  today: number = Date.now();
+  // This function allows for employeeid's input values to be read by a parent component
+  onEnter(id: number): void{
+    this.employeeidInput.emit(id);
   }
-  // Find employee by id
-  getEmployee(): void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.timeclockService.getEmployee(id).subscribe(employee => this.employee = employee);
-  }
-
-  clockin(employee: Employee): void {
-    this.timeclockService.clockinEmployee(employee).subscribe(employee => employee.clockedIN = true );
-}
+  //None of these functions are called left for reference, remove when redoing code
+  // //Gets all employees
+  // getEmployees(): void{
+  //   this.timeclockService.getEmployees()
+  //     .subscribe(employees => this.employees = employees);
+  // }
+  //
+  // // Find employee by id
+  // clockin(id: number): void {
+  //   this.timeclockService.clockinEmployee(id).subscribe(employee => this.employee = employee);
+  // }
 }

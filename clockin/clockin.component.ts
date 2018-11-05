@@ -1,6 +1,13 @@
 // This component should act as a controller, to sequence the components needed to complete a clock in
-import { Component, OnInit } from '@angular/core';
-import { EmployeeidComponent } from '../employeeid/employeeid.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { Observable, of } from 'rxjs';
+import { Employee } from '../employee';
+import { TimeClockService } from '../time-clock.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { MessageService } from '../message.service';
+
 
 
 @Component({
@@ -10,11 +17,25 @@ import { EmployeeidComponent } from '../employeeid/employeeid.component';
 })
 export class ClockinComponent implements OnInit {
 
-  constructor() { }
+  @Input() employee: Employee;
+  employees: Employee[];
+  selectEmployee: Employee;
+  idfromInput: string;
+
+  constructor(
+    private timeclockService: TimeClockService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private messageservice: MessageService
+  ) { }
 
   ngOnInit() {
 
   }
   // Uses a pipe to display current time, this needs to be made to actaully progress with time.
   today: number = Date.now();
+
+  clockin(id: number): void {
+    this.timeclockService.clockinEmployee(id).subscribe(employee => this.employee = employee);
+  }
 }

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-time-clock';
+  public trackerapi = 'api/employee';//URL to web api
+  data: any = {};
 }

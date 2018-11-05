@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { ButtonboxComponent } from './buttonbox/buttonbox.component';
 import { ClockinComponent } from './clockin/clockin.component';
 import { EmployeeidComponent } from './employeeid/employeeid.component';
 import { MessagesComponent } from './messages/messages.component';
+import { Timeclockinterceptor } from "./timeclockinterceptor"
 
 @NgModule({
   declarations: [
@@ -31,7 +32,14 @@ import { MessagesComponent } from './messages/messages.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [
+    AppComponent,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Timeclockinterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 <!-- This component should act as a controller, to sequence the components needed to complete a clock in -->
-<p>{{today | date: 'mediumTime'}}</p>
+<!-- <p>{{today | date: 'mediumTime'}}</p> -->
 <div>
-  <!-- //app- allows you to call any component by name -->
-  <app-employeeid></app-employeeid>
+  <!-- app- allows you to call any component by name -->
+  <!-- The () text connects the parent to the child and triggers on changes -->
+  <app-employeeid (employeeidInput) = "clockin($event)"></app-employeeid>
+  <p>{{employee.name}} clocked in at {{today | date: 'shortTime'}}</p>
 </div>
