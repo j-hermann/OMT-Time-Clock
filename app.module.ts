@@ -10,7 +10,8 @@ import { ButtonboxComponent } from './buttonbox/buttonbox.component';
 import { ClockinComponent } from './clockin/clockin.component';
 import { EmployeeidComponent } from './employeeid/employeeid.component';
 import { MessagesComponent } from './messages/messages.component';
-import { Timeclockinterceptor } from "./timeclockinterceptor"
+import { Timeclockinterceptor } from "./timeclockinterceptor";
+import { NumberpadComponent } from './numberpad/numberpad.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Timeclockinterceptor } from "./timeclockinterceptor"
     ButtonboxComponent,
     ClockinComponent,
     EmployeeidComponent,
-    MessagesComponent
+    MessagesComponent,
+    NumberpadComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+/* Sets over all type options that should persist through the whole project */
 body{
   font-family: "Times New Roman", Georgia, serif;
 }
@@ -20,6 +21,7 @@ a {
     border-bottom: 1px solid #555;
 }
 
+/* Styles the links in the vertical menu */
 .vertical-menu a {
     background-color: #eee;
     color: black;
@@ -29,15 +31,18 @@ a {
     font-size: 20px;
   }
 
+/* Sets the color when a cursor is over the link */
 .vertical-menu a:hover {
     background-color: #ccc;
 }
 
+/* Changes the color when the link is active */
 .vertical-menu a.active {
     background-color: #4CAF50;
     color: white;
 }
 
+/* Positions the area that the various views will appear in */
 .main-view{
   display: inline-block;
   padding-left: 11%;

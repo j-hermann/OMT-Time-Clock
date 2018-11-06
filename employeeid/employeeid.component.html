@@ -7,22 +7,11 @@
   </ul>
 </div> -->
 <!-- Takes in employee id, should transmit to services, and then recieve a message -->
-<input #eidBox name="eidfield" (keyup.enter)="onEnter(eidBox.value)">
+<input #eidBox [(ngModel)]="idnumberbox" name="eidfield" (keyup.enter)="onEnter(eidBox.value)">
 <input type="button" id="enterid" value="Enter" (click)="onEnter(eidBox.value)">
+<app-numberpad (numberpadInput) = "keypadValue($event)"></app-numberpad>
 <!-- <p>{{employee.name}} clocked in at {{today | date: 'shortTime'}}</p>
 <div *ngIf="idfromInput">
   {{idfromInput}}
 </div> -->
 <app-messages></app-messages>
-<!-- Number pad layout, uncomment once other functionality is completed -->
-<!-- <div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
-</div> -->
