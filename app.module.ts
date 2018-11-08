@@ -11,7 +11,7 @@ import { ClockinComponent } from './clockin/clockin.component';
 import { EmployeeidComponent } from './employeeid/employeeid.component';
 import { MessagesComponent } from './messages/messages.component';
 import { Timeclockinterceptor } from "./timeclockinterceptor";
-import { NumberpadComponent } from './numberpad/numberpad.component'
+import { NumberpadComponent } from './numberpad/numberpad.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { NumberpadComponent } from './numberpad/numberpad.component'
     ClockinComponent,
     EmployeeidComponent,
     MessagesComponent,
-    NumberpadComponent
+    NumberpadComponent,
   ],
   imports: [
     BrowserModule,

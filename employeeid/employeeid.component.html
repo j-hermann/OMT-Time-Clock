@@ -7,7 +7,8 @@
   </ul>
 </div> -->
 <!-- Takes in employee id, should transmit to services, and then recieve a message -->
-<input #eidBox [(ngModel)]="idnumberbox" name="eidfield" (keyup.enter)="onEnter(eidBox.value)">
+<input #eidBox name="eidfield" value="" (keyup.enter)="onEnter(eidBox.value)"
+  [(ngModel)]="idnumberbox" autofocus>
 <input type="button" id="enterid" value="Enter" (click)="onEnter(eidBox.value)">
 <app-numberpad (numberpadInput) = "keypadValue($event)"></app-numberpad>
 <!-- <p>{{employee.name}} clocked in at {{today | date: 'shortTime'}}</p>

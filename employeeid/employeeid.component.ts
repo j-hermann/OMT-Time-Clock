@@ -6,6 +6,7 @@ import { TimeClockService } from '../time-clock.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MessageService } from '../message.service';
+import { concat } from 'rxjs/operators';
 
 @Component({
   selector: 'app-employeeid',
@@ -18,17 +19,17 @@ export class EmployeeidComponent implements OnInit {
   employees: Employee[];
   selectEmployee: Employee;
   idfromInput: string;
-  idnumberbox: number = null;
+  idnumberbox: string = "";
 
   constructor(
     private timeclockService: TimeClockService,
     private route: ActivatedRoute,
     private location: Location,
-    private messagyeservice: MessageService
+    private messageservice: MessageService
   ) { }
 
   ngOnInit() {
-    // this.getEmployees();
+
   }
 
   //Allows for date and time to be displayed using the built in time pipe
@@ -37,6 +38,7 @@ export class EmployeeidComponent implements OnInit {
   // This function allows for employeeid's input values to be read by a parent component
   onEnter(id: number): void{
     this.employeeidInput.emit(id);
+    this.idnumberbox = "";
   }
 
   // This should change the value displayed in the box when a key is pressed
@@ -47,7 +49,7 @@ export class EmployeeidComponent implements OnInit {
 
   //Log for testing purposes
   private log(message: string) {
-    this.messageservice.add(`TimeClockService: ${message}`);
+    this.messageservice.add(`EmployeeId: ${message}`);
   }
 
   //None of these functions are called, left for reference, remove when redoing code

@@ -4,5 +4,7 @@
   <!-- app- allows you to call any component by name -->
   <!-- The () text connects the parent to the child and triggers on changes -->
   <app-employeeid (employeeidInput) = "clockin($event)"></app-employeeid>
-  <p>{{employee.name}} clocked in at {{today | date: 'shortTime'}}</p>
+  <div *ngIf="employee.name">
+    <p>{{employee.name}} clocked in at {{today | date: 'shortTime'}}</p>
+  </div>
 </div>
