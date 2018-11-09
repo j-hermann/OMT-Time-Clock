@@ -40,15 +40,6 @@ export class TimeClockService {
     );
   }
 
-  // Alternate method possibly
-  clockinEmployee2 (id: number): Observable<Employee> {
-    const url = `${this.trackerapi}/${id}`;
-    return this.http.put<Employee>(url, {clockedIN: true}).pipe(
-      tap(_ => this.log(`Fetched Employee ${id}`)),
-      catchError(this.handleError<any>('Clock in employee'))
-    );
-  }
-
   private log(message: string) {
     this.messageservice.add(`TimeClockService: ${message}`);
   }
