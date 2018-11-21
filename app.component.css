@@ -1,9 +1,9 @@
 /* Sets over all type options that should persist through the whole project */
 body{
-  font-family: "Times New Roman", Georgia, serif;
+  font-family: "Futura", Helvetica, sans-serif;
 }
 
-/* Sets up the veritcal menu */
+/* Styles the veritcal menu on the left side of the screen */
 .vertical-menu {
     width: 10%;
     height: 100%;
@@ -13,27 +13,33 @@ body{
     top: 0;
     left: 0;
     overflow-x: hidden;
-    background-color: #eee;
+    background-color: #ffffff;
+    box-shadow: 5px 0px 10px #888888;
 }
 
 /* Outlines the various links for easier viewing */
 a {
-    border-bottom: 1px solid #555;
+    /* border-bottom: 1px solid #555; */
+    font-family: "Futura", Helvetica, sans-serif;
 }
 
 /* Styles the links in the vertical menu */
 .vertical-menu a {
-    background-color: #eee;
-    color: black;
+    background-color: #ffffff;
     display: block;
-    padding: 25px 0px 25px 10px;
+    padding: 15px 0px 15px 10px;
+    color: black;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .vertical-menu a:visited{
+    color: black;
   }
 
 /* Sets the color when a cursor is over the link */
 .vertical-menu a:hover {
-    background-color: #ccc;
+    background-color: #99c2ff;
 }
 
 /* Changes the color when the link is active */

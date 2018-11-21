@@ -1,0 +1,9 @@
+/* Styles the title of the clock in screen */
+h1{
+  font-family: "Futura", Helvetica, sans-serif;
+}
+
+p{
+  font-family: "Futura", Helvetica, sans-serif;
+  font-size: 20px;
+}
