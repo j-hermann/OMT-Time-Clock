@@ -40,6 +40,14 @@ export class TimeClockService {
     );
   }
 
+  clockoutEmployee (id: number): Observable<Employee> {
+    const url = `${this.trackerapi}/${id}`;
+    return this.http.get<Employee>(url).pipe(
+      tap(_ => this.log(`Fetched Employee ${id}`)),
+      catchError(this.handleError<any>('Clock out employee'))
+    );
+  }
+
   private log(message: string) {
     this.messageservice.add(`TimeClockService: ${message}`);
   }

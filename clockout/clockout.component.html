@@ -1,0 +1,11 @@
+<!-- This component should act as a controller, to sequence the components needed to complete a clock in -->
+<!-- <p>{{today | date: 'mediumTime'}}</p> -->
+<div>
+  <h1>Clock Out</h1>
+  <!-- app- allows you to call any component by name -->
+  <!-- The () text connects the parent to the child and triggers on changes -->
+  <app-employeeid (employeeidInput) = "clockout($event)"></app-employeeid>
+  <div *ngIf="employee.name">
+    <p>{{employee.name}} clocked out at {{today | date: 'shortTime'}}</p>
+  </div>
+</div>
